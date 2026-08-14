@@ -16,7 +16,7 @@ import {
   type DocumentRef,
   type DocumentSnapshot,
   type UiSurfaceConnection,
-} from '@memorax-agent/dsh-ui-container/client'
+} from '@ch4acko3/dsh-ui-container/client'
 
 type LoadState =
   | { status: 'loading' }

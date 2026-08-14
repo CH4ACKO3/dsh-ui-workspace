@@ -1,5 +1,5 @@
 {
-  "name": "@memorax-agent/dsh-ui-workbench",
+  "name": "@ch4acko3/dsh-ui-workbench",
   "version": "0.1.0",
   "description": "Composable workbench primitives for DeepSeek Harness UI plugins",
   "type": "module",
@@ -28,12 +28,12 @@
   "packageManager": "pnpm@11.19.0",
   "peerDependencies": {
     "@deepseek-ai/dsh-client-ui-primitives": "0.1.0-rc.6",
-    "@memorax-agent/dsh-ui-container": "^0.1.0",
+    "@ch4acko3/dsh-ui-container": "^0.1.0",
     "react": "^18.2.0"
   },
   "devDependencies": {
     "@deepseek-ai/dsh-client-ui-primitives": "0.1.0-rc.6",
-    "@memorax-agent/dsh-ui-container": "github:CH4ACKO3/dsh-ui-container#19bf0fd5376d7f76ace7a56cced34b95ae73ae9f",
+    "@ch4acko3/dsh-ui-container": "github:CH4ACKO3/dsh-ui-container#69345e63a997b27dcc8095b04fc96242ab15f7c3",
     "@types/react": "~18.3.1",
     "react": "^18.2.0",
     "typescript": "^6.0.3"

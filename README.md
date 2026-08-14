@@ -20,7 +20,7 @@ import {
   ExplorerPaneStack,
   TabbedEditor,
   TreeView,
-} from '@memorax-agent/dsh-ui-workbench/client'
+} from '@ch4acko3/dsh-ui-workbench/client'
 ```
 
 This is a library package rather than a directly installable DSH bundle.

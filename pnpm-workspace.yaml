@@ -1,2 +1,2 @@
 allowBuilds:
-  '@memorax-agent/dsh-ui-container@https://codeload.github.com/CH4ACKO3/dsh-ui-container/tar.gz/19bf0fd5376d7f76ace7a56cced34b95ae73ae9f': true
+  '@ch4acko3/dsh-ui-container@https://codeload.github.com/CH4ACKO3/dsh-ui-container/tar.gz/69345e63a997b27dcc8095b04fc96242ab15f7c3': true

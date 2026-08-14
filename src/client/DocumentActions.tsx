@@ -1,5 +1,5 @@
 import { useSyncExternalStore, type ReactNode } from 'react'
-import type { DocumentRef, DocumentSnapshot } from '@memorax-agent/dsh-ui-container/client'
+import type { DocumentRef, DocumentSnapshot } from '@ch4acko3/dsh-ui-container/client'
 export type DocumentActionContext = {
   surfaceId: string
   sessionId: string
