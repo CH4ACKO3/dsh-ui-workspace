@@ -3,21 +3,30 @@
   "version": "0.1.0",
   "description": "Composable workspace primitives for DeepSeek Harness UI plugins",
   "type": "module",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
   "exports": {
-    "./client": {
+    ".": {
       "types": "./lib/index.d.ts",
       "default": "./lib/index.js"
+    },
+    "./client": {
+      "types": "./lib/client.d.ts",
+      "default": "./lib/client.js"
     },
     "./package.json": "./package.json"
   },
   "files": [
     "lib",
+    "cordis.patch.yml",
     "README.md",
     "LICENSE"
   ],
   "scripts": {
-    "build": "tsc -p tsconfig.json",
-    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "build": "pnpm run build:client && pnpm run build:host",
+    "build:host": "tsc -p tsconfig.json",
+    "build:client": "tsdown",
+    "typecheck": "tsc -p tsconfig.json --noEmit && tsc -p tsconfig.client.json --noEmit",
     "test": "pnpm run build && node --test test/*.test.mjs",
     "check": "pnpm run typecheck && pnpm run test",
     "prepare": "pnpm run build"
@@ -26,16 +35,33 @@
     "node": "^22.19.0 || >=24.0.0"
   },
   "packageManager": "pnpm@11.19.0",
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime",
+        "@deepseek-ai/dsh-client-ui-primitives",
+        "@ch4acko3/dsh-ui-container"
+      ],
+      "platform": "web"
+    }
+  },
+  "dependencies": {
+    "@ch4acko3/dsh-ui-container": "github:CH4ACKO3/dsh-ui-container#8c6d3f28dbf69856a70c3ace25d1e58d574a4cf5"
+  },
   "peerDependencies": {
+    "@deepseek-ai/dsh-client-runtime": "0.1.0-rc.6",
     "@deepseek-ai/dsh-client-ui-primitives": "0.1.0-rc.6",
-    "@ch4acko3/dsh-ui-container": "^0.1.0",
     "react": "^18.2.0"
   },
   "devDependencies": {
+    "@deepseek-ai/dsh-client-runtime": "0.1.0-rc.6",
     "@deepseek-ai/dsh-client-ui-primitives": "0.1.0-rc.6",
-    "@ch4acko3/dsh-ui-container": "github:CH4ACKO3/dsh-ui-container#69345e63a997b27dcc8095b04fc96242ab15f7c3",
     "@types/react": "~18.3.1",
     "react": "^18.2.0",
+    "tsdown": "0.22.14",
     "typescript": "^6.0.3"
   },
   "keywords": [

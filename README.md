@@ -11,8 +11,20 @@ consumer.
 
 The dependency is intentional: Workspace document surfaces call the
 container's `useUiSurface()` hook at runtime and share its `DocumentRef` and
-`DocumentSnapshot` contracts. The container is declared as a peer so the host
-owns one surface context instead of Workspace installing a second copy.
+`DocumentSnapshot` contracts. The Workspace bundle installs and activates the
+Container bundle row so the browser owns one shared `uiContainer` service.
+
+Install Workspace into a DeepSeek Harness profile; Container is pulled in
+automatically:
+
+```sh
+dsh plugin --profile web add github:CH4ACKO3/dsh-ui-workspace
+```
+
+Git dependencies run both packages' `prepare` builds. With pnpm 10 or newer,
+approve the exact package keys reported by the first install in the profile's
+`pnpm-workspace.yaml`, then repeat the command. Registry releases and packed
+artifacts do not require that approval.
 
 ```ts
 import {
@@ -23,4 +35,5 @@ import {
 } from '@ch4acko3/dsh-ui-workspace/client'
 ```
 
-This is a library package rather than a directly installable DSH bundle.
+The same package remains importable by browser plugins that compose these
+primitives into product-specific pages.

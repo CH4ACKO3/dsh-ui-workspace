@@ -40,3 +40,23 @@ test('provides accessible tree, tab, and sash interactions', async () => {
   assert.match(sash, /setPointerCapture/)
   assert.match(sash, /role="separator"/)
 })
+
+test('ships an independently installable DSH client bundle over Container', async () => {
+  const packageJson = JSON.parse(await readFile(new URL('../package.json', import.meta.url), 'utf8'))
+  const patch = await readFile(new URL('../cordis.patch.yml', import.meta.url), 'utf8')
+  const host = await readFile(new URL('../src/index.ts', import.meta.url), 'utf8')
+  const client = await readFile(new URL(`${sourceRoot}index.ts`, import.meta.url), 'utf8')
+
+  assert.equal(packageJson.dsh.bundle.patch, './cordis.patch.yml')
+  assert.deepEqual(packageJson.dsh.client.inject, [
+    '@deepseek-ai/dsh-client-runtime',
+    '@deepseek-ai/dsh-client-ui-primitives',
+    '@ch4acko3/dsh-ui-container',
+  ])
+  assert.equal(packageJson.exports['.'].default, './lib/index.js')
+  assert.equal(packageJson.exports['./client'].default, './lib/client.js')
+  assert.match(patch, /id: ch4acko3-ui-container/)
+  assert.match(patch, /id: ch4acko3-ui-workspace/)
+  assert.match(host, /export function apply\(\): void/)
+  assert.match(client, /inject = \['uiContainer'\]/)
+})

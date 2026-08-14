@@ -1,0 +1,6 @@
+- insert:
+    - id: ch4acko3-ui-container
+      name: '@ch4acko3/dsh-ui-container'
+
+    - id: ch4acko3-ui-workspace
+      name: '@ch4acko3/dsh-ui-workspace'
