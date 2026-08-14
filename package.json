@@ -1,0 +1,57 @@
+{
+  "name": "@memorax-agent/dsh-ui-workbench",
+  "version": "0.1.0",
+  "description": "Composable workbench primitives for DeepSeek Harness UI plugins",
+  "type": "module",
+  "exports": {
+    "./client": {
+      "types": "./lib/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "check": "pnpm run typecheck && pnpm run build",
+    "prepare": "pnpm run build"
+  },
+  "engines": {
+    "node": "^22.19.0 || >=24.0.0"
+  },
+  "packageManager": "pnpm@11.19.0",
+  "dependencies": {
+    "@memorax-agent/dsh-ui-container": "github:CH4ACKO3/dsh-ui-container#4c97325e7388922e5ec2d5eb051e3e63f6696c59"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh-client-ui-primitives": "0.1.0-rc.6",
+    "react": "^18.2.0"
+  },
+  "devDependencies": {
+    "@deepseek-ai/dsh-client-ui-primitives": "0.1.0-rc.6",
+    "@types/react": "~18.3.1",
+    "react": "^18.2.0",
+    "typescript": "^6.0.3"
+  },
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "cordis",
+    "ui",
+    "workbench"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CH4ACKO3/dsh-ui-workbench.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
