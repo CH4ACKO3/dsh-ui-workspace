@@ -11,8 +11,9 @@ consumer.
 
 The dependency is intentional: Workspace document surfaces call the
 container's `useUiSurface()` hook at runtime and share its `DocumentRef` and
-`DocumentSnapshot` contracts. The Workspace bundle installs and activates the
-Container bundle row so the browser owns one shared `uiContainer` service.
+`DocumentSnapshot` contracts. Container remains an independently installed
+plugin and owns the single bundle row that provides the shared `uiContainer`
+service; Workspace only consumes that service.
 
 Install Container and Workspace as separate bundles in the same DeepSeek
 Harness profile:
@@ -21,6 +22,8 @@ Harness profile:
 dsh plugin --profile web add github:CH4ACKO3/dsh-ui-container
 dsh plugin --profile web add github:CH4ACKO3/dsh-ui-workspace
 ```
+
+These commands are profile-scoped and can be run from any directory.
 
 Git dependencies run both packages' `prepare` builds. With pnpm 10 or newer,
 approve the exact package keys reported by the first install in the profile's
