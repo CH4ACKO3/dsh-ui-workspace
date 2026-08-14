@@ -9,8 +9,8 @@ importers:
   .:
     devDependencies:
       '@ch4acko3/dsh-ui-container':
-        specifier: github:CH4ACKO3/dsh-ui-container#9af17d712dfdd38a0ac52123fafb79c73d23daf0
-        version: https://codeload.github.com/CH4ACKO3/dsh-ui-container/tar.gz/9af17d712dfdd38a0ac52123fafb79c73d23daf0(@deepseek-ai/cordis@4.0.1)(@deepseek-ai/dsh-client-runtime@0.1.0-rc.6(5ee287bd07c00b3171c7ee342e9431a4))(react@18.3.1)
+        specifier: github:CH4ACKO3/dsh-ui-container#a80928e0bc344e0468deafadc6b2926591ade53a
+        version: https://codeload.github.com/CH4ACKO3/dsh-ui-container/tar.gz/a80928e0bc344e0468deafadc6b2926591ade53a(@deepseek-ai/cordis@4.0.1)(@deepseek-ai/dsh-client-runtime@0.1.0-rc.6(5ee287bd07c00b3171c7ee342e9431a4))(react@18.3.1)
       '@deepseek-ai/dsh-client-runtime':
         specifier: 0.1.0-rc.6
         version: 0.1.0-rc.6(5ee287bd07c00b3171c7ee342e9431a4)
@@ -35,8 +35,8 @@ importers:
 
 packages:
 
-  '@ch4acko3/dsh-ui-container@https://codeload.github.com/CH4ACKO3/dsh-ui-container/tar.gz/9af17d712dfdd38a0ac52123fafb79c73d23daf0':
-    resolution: {gitHosted: true, integrity: sha512-Z9KjopCQWPziwgqgC3xnUTm6gfTCa7FC0kWQxkiTEuEA70O5BpOcH3ocbCtvtRl7TxdEiN0aeYdTyonCqOPQig==, tarball: https://codeload.github.com/CH4ACKO3/dsh-ui-container/tar.gz/9af17d712dfdd38a0ac52123fafb79c73d23daf0}
+  '@ch4acko3/dsh-ui-container@https://codeload.github.com/CH4ACKO3/dsh-ui-container/tar.gz/a80928e0bc344e0468deafadc6b2926591ade53a':
+    resolution: {gitHosted: true, integrity: sha512-9cLSKd2wAwwemQlxu3iw6cEY4kG7i1Y2A9dIA4daHkylf+wDvi+AaFk43cRB7oVtHNm/lmdIM4PKDD9qRDwvAw==, tarball: https://codeload.github.com/CH4ACKO3/dsh-ui-container/tar.gz/a80928e0bc344e0468deafadc6b2926591ade53a}
     version: 0.1.0
     engines: {node: ^22.19.0 || >=24.0.0}
     peerDependencies:
@@ -1307,7 +1307,7 @@ packages:
 
 snapshots:
 
-  '@ch4acko3/dsh-ui-container@https://codeload.github.com/CH4ACKO3/dsh-ui-container/tar.gz/9af17d712dfdd38a0ac52123fafb79c73d23daf0(@deepseek-ai/cordis@4.0.1)(@deepseek-ai/dsh-client-runtime@0.1.0-rc.6(5ee287bd07c00b3171c7ee342e9431a4))(react@18.3.1)':
+  '@ch4acko3/dsh-ui-container@https://codeload.github.com/CH4ACKO3/dsh-ui-container/tar.gz/a80928e0bc344e0468deafadc6b2926591ade53a(@deepseek-ai/cordis@4.0.1)(@deepseek-ai/dsh-client-runtime@0.1.0-rc.6(5ee287bd07c00b3171c7ee342e9431a4))(react@18.3.1)':
     dependencies:
       '@deepseek-ai/cordis': 4.0.1(@deepseek-ai/cordis-plugin-include@1.0.6)(@deepseek-ai/cordis-plugin-loader@1.0.2)
       '@deepseek-ai/dsh-client-runtime': 0.1.0-rc.6(5ee287bd07c00b3171c7ee342e9431a4)
