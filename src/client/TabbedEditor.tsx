@@ -34,7 +34,9 @@ export function TabbedEditor({
   onPin,
 }: TabbedEditorProps) {
   const activeTab = tabs.find((tab) => tab.id === activeTabId)
-  const panelId = useId()
+  const instanceId = useId()
+  const panelId = `${instanceId}-panel`
+  const tabElementId = (tabId: string) => `${instanceId}-tab-${encodeURIComponent(tabId)}`
   const tabRefs = useRef(new Map<string, HTMLButtonElement>())
   const focusAfterClose = useRef<string | undefined>(undefined)
 
@@ -90,6 +92,7 @@ export function TabbedEditor({
                   type="button"
                   className="dsh-workspace-editor-tab-label"
                   role="tab"
+                  id={tabElementId(tab.id)}
                   aria-selected={active}
                   aria-controls={panelId}
                   tabIndex={active ? 0 : -1}
@@ -126,7 +129,12 @@ export function TabbedEditor({
           })}
         </div>
       )}
-      <div id={panelId} className="dsh-workspace-editor-body" role="tabpanel">
+      <div
+        id={panelId}
+        className="dsh-workspace-editor-body"
+        role="tabpanel"
+        aria-labelledby={activeTab ? tabElementId(activeTab.id) : undefined}
+      >
         {activeTab ? renderDocument(activeTab.document) : empty}
       </div>
     </main>

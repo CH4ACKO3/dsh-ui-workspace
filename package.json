@@ -50,22 +50,18 @@
     }
   },
   "peerDependencies": {
+    "@ch4acko3/dsh-ui-container": "^0.1.0",
     "@deepseek-ai/dsh-client-runtime": "0.1.0-rc.6",
     "@deepseek-ai/dsh-client-ui-primitives": "0.1.0-rc.6",
-    "@ch4acko3/dsh-ui-container": "^0.1.0",
     "react": "^18.2.0"
   },
-  "peerDependenciesMeta": {
-    "@ch4acko3/dsh-ui-container": {
-      "optional": true
-    }
-  },
   "devDependencies": {
+    "@ch4acko3/dsh-ui-container": "github:CH4ACKO3/dsh-ui-container#e0046c6f2eb684776d615297fdcf3f3321e64c3a",
     "@deepseek-ai/dsh-client-runtime": "0.1.0-rc.6",
     "@deepseek-ai/dsh-client-ui-primitives": "0.1.0-rc.6",
-    "@ch4acko3/dsh-ui-container": "github:CH4ACKO3/dsh-ui-container#e0046c6f2eb684776d615297fdcf3f3321e64c3a",
     "@types/react": "~18.3.1",
     "react": "^18.2.0",
+    "react-dom": "^18.3.1",
     "tsdown": "0.22.14",
     "typescript": "^6.0.3",
     "unrun": "0.3.1"

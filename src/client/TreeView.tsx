@@ -27,6 +27,8 @@ type StickyTreeItem = {
   offset: number
 }
 
+const MAX_TREE_DEPTH = 100
+
 export type TreeViewProps<T> = {
   nodes: readonly T[]
   ariaLabel: string
@@ -59,9 +61,13 @@ export function TreeView<T>({
 }: TreeViewProps<T>) {
   const visibleItems = useMemo(() => {
     const result: VisibleTreeItem<T>[] = []
+    const seenIds = new Set<string>()
     const visit = (entries: readonly T[], depth: number, parentId?: string) => {
+      if (depth >= MAX_TREE_DEPTH) return
       for (const node of entries) {
         const id = getId(node)
+        if (seenIds.has(id)) continue
+        seenIds.add(id)
         const children = getChildren(node) ?? []
         const expandable = children.length > 0
         const expanded = expandable && isExpanded(node, depth)
