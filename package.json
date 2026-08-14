@@ -40,6 +40,7 @@
       "patch": "./cordis.patch.yml"
     },
     "client": {
+      "immediately": true,
       "inject": [
         "@deepseek-ai/dsh-client-runtime",
         "@deepseek-ai/dsh-client-ui-primitives",
@@ -62,7 +63,7 @@
   "devDependencies": {
     "@deepseek-ai/dsh-client-runtime": "0.1.0-rc.6",
     "@deepseek-ai/dsh-client-ui-primitives": "0.1.0-rc.6",
-    "@ch4acko3/dsh-ui-container": "github:CH4ACKO3/dsh-ui-container#a80928e0bc344e0468deafadc6b2926591ade53a",
+    "@ch4acko3/dsh-ui-container": "github:CH4ACKO3/dsh-ui-container#e0046c6f2eb684776d615297fdcf3f3321e64c3a",
     "@types/react": "~18.3.1",
     "react": "^18.2.0",
     "tsdown": "0.22.14",
