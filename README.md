@@ -14,17 +14,19 @@ container's `useUiSurface()` hook at runtime and share its `DocumentRef` and
 `DocumentSnapshot` contracts. The Workspace bundle installs and activates the
 Container bundle row so the browser owns one shared `uiContainer` service.
 
-Install Workspace into a DeepSeek Harness profile; Container is pulled in
-automatically:
+Install Container and Workspace as separate bundles in the same DeepSeek
+Harness profile:
 
 ```sh
+dsh plugin --profile web add github:CH4ACKO3/dsh-ui-container
 dsh plugin --profile web add github:CH4ACKO3/dsh-ui-workspace
 ```
 
 Git dependencies run both packages' `prepare` builds. With pnpm 10 or newer,
 approve the exact package keys reported by the first install in the profile's
 `pnpm-workspace.yaml`, then repeat the command. Registry releases and packed
-artifacts do not require that approval.
+artifacts do not require that approval. Container must remain installed while
+Workspace is enabled.
 
 ```ts
 import {

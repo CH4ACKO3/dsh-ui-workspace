@@ -48,17 +48,21 @@
       "platform": "web"
     }
   },
-  "dependencies": {
-    "@ch4acko3/dsh-ui-container": "github:CH4ACKO3/dsh-ui-container#8c6d3f28dbf69856a70c3ace25d1e58d574a4cf5"
-  },
   "peerDependencies": {
     "@deepseek-ai/dsh-client-runtime": "0.1.0-rc.6",
     "@deepseek-ai/dsh-client-ui-primitives": "0.1.0-rc.6",
+    "@ch4acko3/dsh-ui-container": "^0.1.0",
     "react": "^18.2.0"
+  },
+  "peerDependenciesMeta": {
+    "@ch4acko3/dsh-ui-container": {
+      "optional": true
+    }
   },
   "devDependencies": {
     "@deepseek-ai/dsh-client-runtime": "0.1.0-rc.6",
     "@deepseek-ai/dsh-client-ui-primitives": "0.1.0-rc.6",
+    "@ch4acko3/dsh-ui-container": "github:CH4ACKO3/dsh-ui-container#8c6d3f28dbf69856a70c3ace25d1e58d574a4cf5",
     "@types/react": "~18.3.1",
     "react": "^18.2.0",
     "tsdown": "0.22.14",

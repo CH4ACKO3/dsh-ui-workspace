@@ -7,11 +7,10 @@ settings:
 importers:
 
   .:
-    dependencies:
+    devDependencies:
       '@ch4acko3/dsh-ui-container':
         specifier: github:CH4ACKO3/dsh-ui-container#8c6d3f28dbf69856a70c3ace25d1e58d574a4cf5
         version: https://codeload.github.com/CH4ACKO3/dsh-ui-container/tar.gz/8c6d3f28dbf69856a70c3ace25d1e58d574a4cf5(@deepseek-ai/cordis@4.0.1)(@deepseek-ai/dsh-client-runtime@0.1.0-rc.6(5ee287bd07c00b3171c7ee342e9431a4))(react@18.3.1)
-    devDependencies:
       '@deepseek-ai/dsh-client-runtime':
         specifier: 0.1.0-rc.6
         version: 0.1.0-rc.6(5ee287bd07c00b3171c7ee342e9431a4)
