@@ -25,7 +25,7 @@
   "scripts": {
     "build": "pnpm run build:client && pnpm run build:host",
     "build:host": "tsc -p tsconfig.json",
-    "build:client": "tsdown",
+    "build:client": "tsdown --config-loader unrun",
     "typecheck": "tsc -p tsconfig.json --noEmit && tsc -p tsconfig.client.json --noEmit",
     "test": "pnpm run build && node --test test/*.test.mjs",
     "check": "pnpm run typecheck && pnpm run test",
@@ -62,11 +62,12 @@
   "devDependencies": {
     "@deepseek-ai/dsh-client-runtime": "0.1.0-rc.6",
     "@deepseek-ai/dsh-client-ui-primitives": "0.1.0-rc.6",
-    "@ch4acko3/dsh-ui-container": "github:CH4ACKO3/dsh-ui-container#8c6d3f28dbf69856a70c3ace25d1e58d574a4cf5",
+    "@ch4acko3/dsh-ui-container": "github:CH4ACKO3/dsh-ui-container#ecc162fdd7cf97fa949be8697a4fc49f66961fb6",
     "@types/react": "~18.3.1",
     "react": "^18.2.0",
     "tsdown": "0.22.14",
-    "typescript": "^6.0.3"
+    "typescript": "^6.0.3",
+    "unrun": "0.3.1"
   },
   "keywords": [
     "deepseek-harness",

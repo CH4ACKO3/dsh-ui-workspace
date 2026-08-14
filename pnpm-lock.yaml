@@ -9,8 +9,8 @@ importers:
   .:
     devDependencies:
       '@ch4acko3/dsh-ui-container':
-        specifier: github:CH4ACKO3/dsh-ui-container#8c6d3f28dbf69856a70c3ace25d1e58d574a4cf5
-        version: https://codeload.github.com/CH4ACKO3/dsh-ui-container/tar.gz/8c6d3f28dbf69856a70c3ace25d1e58d574a4cf5(@deepseek-ai/cordis@4.0.1)(@deepseek-ai/dsh-client-runtime@0.1.0-rc.6(5ee287bd07c00b3171c7ee342e9431a4))(react@18.3.1)
+        specifier: github:CH4ACKO3/dsh-ui-container#ecc162fdd7cf97fa949be8697a4fc49f66961fb6
+        version: https://codeload.github.com/CH4ACKO3/dsh-ui-container/tar.gz/ecc162fdd7cf97fa949be8697a4fc49f66961fb6(@deepseek-ai/cordis@4.0.1)(@deepseek-ai/dsh-client-runtime@0.1.0-rc.6(5ee287bd07c00b3171c7ee342e9431a4))(react@18.3.1)
       '@deepseek-ai/dsh-client-runtime':
         specifier: 0.1.0-rc.6
         version: 0.1.0-rc.6(5ee287bd07c00b3171c7ee342e9431a4)
@@ -25,15 +25,18 @@ importers:
         version: 18.3.1
       tsdown:
         specifier: 0.22.14
-        version: 0.22.14(typescript@6.0.3)
+        version: 0.22.14(typescript@6.0.3)(unrun@0.3.1)
       typescript:
         specifier: ^6.0.3
         version: 6.0.3
+      unrun:
+        specifier: 0.3.1
+        version: 0.3.1
 
 packages:
 
-  '@ch4acko3/dsh-ui-container@https://codeload.github.com/CH4ACKO3/dsh-ui-container/tar.gz/8c6d3f28dbf69856a70c3ace25d1e58d574a4cf5':
-    resolution: {gitHosted: true, integrity: sha512-2qNO448qDEAj5SXVeWZlOz5apoWsu4GagGNmceTI8YE+Dz/fEXk6GD4OORqmlr+xOc89BqIdZU0MJmk3WV8U8g==, tarball: https://codeload.github.com/CH4ACKO3/dsh-ui-container/tar.gz/8c6d3f28dbf69856a70c3ace25d1e58d574a4cf5}
+  '@ch4acko3/dsh-ui-container@https://codeload.github.com/CH4ACKO3/dsh-ui-container/tar.gz/ecc162fdd7cf97fa949be8697a4fc49f66961fb6':
+    resolution: {gitHosted: true, integrity: sha512-zt1v4fwEZIw9XORTRIHNCh7llmhP2fi1Qh73RF0lmaTpNK808nhxjbuQ3eTvYeI1PkUYg929rUMzRr0VGDI16A==, tarball: https://codeload.github.com/CH4ACKO3/dsh-ui-container/tar.gz/ecc162fdd7cf97fa949be8697a4fc49f66961fb6}
     version: 0.1.0
     engines: {node: ^22.19.0 || >=24.0.0}
     peerDependencies:
@@ -1235,6 +1238,16 @@ packages:
   unist-util-visit@5.1.0:
     resolution: {integrity: sha512-m+vIdyeCOpdr/QeQCu2EzxX/ohgS8KbnPDgFni4dQsfSCtpz8UqDyY5GjRru8PDKuYn7Fq19j1CQ+nJSsGKOzg==}
 
+  unrun@0.3.1:
+    resolution: {integrity: sha512-onIck/oNnCaytwths1ZVp1LK2Gq2hPoyFhiHebObuUXqR3S0uHuLLaBK8K6mRRgV7Ptip8AnNvaUsgzwWwBZuA==}
+    engines: {node: ^22.13.0 || >=24.0.0}
+    hasBin: true
+    peerDependencies:
+      synckit: ^0.11.11
+    peerDependenciesMeta:
+      synckit:
+        optional: true
+
   use-sync-external-store@1.2.0:
     resolution: {integrity: sha512-eEgnFxGQ1Ife9bzYs6VLi8/4X6CObHMw9Qr9tPY43iKwsPw8xE8+EFsf/2cFZ5S3esXgpWgtSCtLNS41F+sKPA==}
     peerDependencies:
@@ -1294,7 +1307,7 @@ packages:
 
 snapshots:
 
-  '@ch4acko3/dsh-ui-container@https://codeload.github.com/CH4ACKO3/dsh-ui-container/tar.gz/8c6d3f28dbf69856a70c3ace25d1e58d574a4cf5(@deepseek-ai/cordis@4.0.1)(@deepseek-ai/dsh-client-runtime@0.1.0-rc.6(5ee287bd07c00b3171c7ee342e9431a4))(react@18.3.1)':
+  '@ch4acko3/dsh-ui-container@https://codeload.github.com/CH4ACKO3/dsh-ui-container/tar.gz/ecc162fdd7cf97fa949be8697a4fc49f66961fb6(@deepseek-ai/cordis@4.0.1)(@deepseek-ai/dsh-client-runtime@0.1.0-rc.6(5ee287bd07c00b3171c7ee342e9431a4))(react@18.3.1)':
     dependencies:
       '@deepseek-ai/cordis': 4.0.1(@deepseek-ai/cordis-plugin-include@1.0.6)(@deepseek-ai/cordis-plugin-loader@1.0.2)
       '@deepseek-ai/dsh-client-runtime': 0.1.0-rc.6(5ee287bd07c00b3171c7ee342e9431a4)
@@ -2595,7 +2608,7 @@ snapshots:
 
   trim-lines@3.0.1: {}
 
-  tsdown@0.22.14(typescript@6.0.3):
+  tsdown@0.22.14(typescript@6.0.3)(unrun@0.3.1):
     dependencies:
       ansis: 4.3.1
       cac: 7.0.0
@@ -2614,6 +2627,7 @@ snapshots:
       verkit: 0.3.2
     optionalDependencies:
       typescript: 6.0.3
+      unrun: 0.3.1
     transitivePeerDependencies:
       - '@typescript/native-preview'
       - '@volar/typescript'
@@ -2654,6 +2668,10 @@ snapshots:
       '@types/unist': 3.0.3
       unist-util-is: 6.0.1
       unist-util-visit-parents: 6.0.2
+
+  unrun@0.3.1:
+    dependencies:
+      rolldown: 1.2.4
 
   use-sync-external-store@1.2.0(react@18.3.1):
     dependencies:
