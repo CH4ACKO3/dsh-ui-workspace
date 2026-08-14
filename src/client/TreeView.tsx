@@ -42,7 +42,7 @@ export type TreeViewProps<T> = {
   onOpen?: (node: T) => void
 }
 
-/** A controlled workbench tree with Explorer-style focus and keyboard behavior. */
+/** A controlled workspace tree with Explorer-style focus and keyboard behavior. */
 export function TreeView<T>({
   nodes,
   ariaLabel,
@@ -95,7 +95,7 @@ export function TreeView<T>({
 
   useLayoutEffect(() => {
     const tree = treeRef.current
-    const viewport = tree?.closest<HTMLElement>('.dsh-workbench-explorer-section-viewport')
+    const viewport = tree?.closest<HTMLElement>('.dsh-workspace-explorer-section-viewport')
     if (!tree || !viewport) return
 
     const updateStickyItems = () => {
@@ -159,13 +159,13 @@ export function TreeView<T>({
 
   const renderItemContent = (item: VisibleTreeItem<T>) => (
     <>
-      <span className="dsh-workbench-tree-chevron">
+      <span className="dsh-workspace-tree-chevron">
         {item.expandable && (item.expanded
           ? <IconChevronDownOutline14 size={14} />
           : <IconChevronRightOutline14 size={14} />)}
       </span>
-      {renderIcon && <span className="dsh-workbench-tree-icon">{renderIcon(item.node, item.expanded)}</span>}
-      <span className="dsh-workbench-tree-label">{item.label}</span>
+      {renderIcon && <span className="dsh-workspace-tree-icon">{renderIcon(item.node, item.expanded)}</span>}
+      <span className="dsh-workspace-tree-label">{item.label}</span>
     </>
   )
 
@@ -200,17 +200,17 @@ export function TreeView<T>({
   return (
     <div ref={treeRef} className={className} role="tree" aria-label={ariaLabel}>
       {stickyItems.length > 0 && (
-        <div className="dsh-workbench-tree-sticky-scroll" aria-hidden="true">
+        <div className="dsh-workspace-tree-sticky-scroll" aria-hidden="true">
           {stickyItems.map((stickyItem, index) => {
             const item = itemsById.get(stickyItem.id)
             if (!item) return null
             const style = {
-              '--dsh-workbench-tree-depth': item.depth,
-              '--dsh-workbench-tree-sticky-offset': `${stickyItem.offset}px`,
+              '--dsh-workspace-tree-depth': item.depth,
+              '--dsh-workspace-tree-sticky-offset': `${stickyItem.offset}px`,
               zIndex: stickyItems.length - index,
             } as CSSProperties
             return (
-              <div key={stickyItem.id} className="dsh-workbench-tree-row dsh-workbench-tree-sticky-row" style={style}>
+              <div key={stickyItem.id} className="dsh-workspace-tree-row dsh-workspace-tree-sticky-row" style={style}>
                 {renderItemContent(item)}
               </div>
             )
@@ -218,7 +218,7 @@ export function TreeView<T>({
         </div>
       )}
       {visibleItems.map((item, index) => {
-        const style = { '--dsh-workbench-tree-depth': item.depth } as CSSProperties
+        const style = { '--dsh-workspace-tree-depth': item.depth } as CSSProperties
         return (
           <button
             key={item.id}
@@ -227,7 +227,7 @@ export function TreeView<T>({
               else rowRefs.current.delete(item.id)
             }}
             type="button"
-            className="dsh-workbench-tree-row"
+            className="dsh-workspace-tree-row"
             role="treeitem"
             aria-level={item.depth + 1}
             aria-expanded={item.expandable ? item.expanded : undefined}

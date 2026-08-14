@@ -70,15 +70,15 @@ export function TabbedEditor({
   }
 
   return (
-    <main className="dsh-workbench-editor">
+    <main className="dsh-workspace-editor">
       {tabs.length > 0 && (
-        <div className="dsh-workbench-editor-tabs" role="tablist" aria-label={tabsLabel}>
+        <div className="dsh-workspace-editor-tabs" role="tablist" aria-label={tabsLabel}>
           {tabs.map((tab, index) => {
             const active = tab.id === activeTabId
             return (
               <div
                 key={tab.id}
-                className="dsh-workbench-editor-tab"
+                className="dsh-workspace-editor-tab"
                 data-active={active}
                 data-preview={tab.preview}
               >
@@ -88,7 +88,7 @@ export function TabbedEditor({
                     else tabRefs.current.delete(tab.id)
                   }}
                   type="button"
-                  className="dsh-workbench-editor-tab-label"
+                  className="dsh-workspace-editor-tab-label"
                   role="tab"
                   aria-selected={active}
                   aria-controls={panelId}
@@ -115,7 +115,7 @@ export function TabbedEditor({
                 </button>
                 <button
                   type="button"
-                  className="dsh-workbench-tab-close"
+                  className="dsh-workspace-tab-close"
                   aria-label={`${closeTabLabel} ${tab.title}`}
                   onClick={() => closeTab(tab.id)}
                 >
@@ -126,7 +126,7 @@ export function TabbedEditor({
           })}
         </div>
       )}
-      <div id={panelId} className="dsh-workbench-editor-body" role="tabpanel">
+      <div id={panelId} className="dsh-workspace-editor-body" role="tabpanel">
         {activeTab ? renderDocument(activeTab.document) : empty}
       </div>
     </main>

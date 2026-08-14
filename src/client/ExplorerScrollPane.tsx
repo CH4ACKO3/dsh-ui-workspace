@@ -59,8 +59,8 @@ export function ExplorerScrollPane({ id, children }: { id: string; children: Rea
     }
     metricsRef.current = metrics
     body.dataset.scrollable = 'true'
-    body.style.setProperty('--dsh-workbench-thumb-height', `${metrics.thumbHeight}px`)
-    body.style.setProperty('--dsh-workbench-thumb-top', `${metrics.thumbTop}px`)
+    body.style.setProperty('--dsh-workspace-thumb-height', `${metrics.thumbHeight}px`)
+    body.style.setProperty('--dsh-workspace-thumb-top', `${metrics.thumbTop}px`)
   }
 
   useLayoutEffect(() => {
@@ -85,12 +85,12 @@ export function ExplorerScrollPane({ id, children }: { id: string; children: Rea
   }
 
   return (
-    <div ref={bodyRef} id={id} className="dsh-workbench-explorer-section-body" data-scrollable="false">
-      <div ref={viewportRef} className="dsh-workbench-explorer-section-viewport" onScroll={updateMetrics}>
-        <div ref={contentRef} className="dsh-workbench-explorer-section-content">{children}</div>
+    <div ref={bodyRef} id={id} className="dsh-workspace-explorer-section-body" data-scrollable="false">
+      <div ref={viewportRef} className="dsh-workspace-explorer-section-viewport" onScroll={updateMetrics}>
+        <div ref={contentRef} className="dsh-workspace-explorer-section-content">{children}</div>
       </div>
       <div
-        className="dsh-workbench-explorer-scrollbar"
+        className="dsh-workspace-explorer-scrollbar"
         aria-hidden="true"
         onPointerDown={(event) => {
           const viewport = viewportRef.current
@@ -103,7 +103,7 @@ export function ExplorerScrollPane({ id, children }: { id: string; children: Rea
         }}
       >
         <div
-          className="dsh-workbench-explorer-scrollbar-thumb"
+          className="dsh-workspace-explorer-scrollbar-thumb"
           onPointerDown={(event) => {
             const viewport = viewportRef.current
             const metrics = metricsRef.current

@@ -9,7 +9,7 @@ editors, document renderers, actions, and VS Code-style explorer behavior.
 product-specific navigation, data providers, commands, and styling to the
 consumer.
 
-The dependency is intentional: Workbench document surfaces call the
+The dependency is intentional: Workspace document surfaces call the
 container's `useUiSurface()` hook at runtime and share its `DocumentRef` and
 `DocumentSnapshot` contracts. The container is declared as a peer so the host
 owns one surface context instead of Workspace installing a second copy.

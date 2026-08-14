@@ -260,13 +260,13 @@ export function ExplorerPaneStack<TContext>({ registry, context, initialLayout, 
   return (
     <div
       ref={stackRef}
-      className="dsh-workbench-explorer-scroll"
+      className="dsh-workspace-explorer-scroll"
       data-overflow={overflow}
       data-resizing={dragState !== null}
     >
       {panes.map((pane, index) => {
         const open = paneIsExpanded(pane, expanded)
-        const contentId = `dsh-workbench-explorer-${pane.id}`
+        const contentId = `dsh-workspace-explorer-${pane.id}`
         const hasOpenBefore = panes.some((candidate, candidateIndex) =>
           candidateIndex <= index && paneIsExpanded(candidate, expanded),
         )
@@ -279,14 +279,14 @@ export function ExplorerPaneStack<TContext>({ registry, context, initialLayout, 
         return (
           <section
             key={pane.id}
-            className="dsh-workbench-explorer-section"
+            className="dsh-workspace-explorer-section"
             data-open={open}
             style={{ height }}
           >
             <button
               ref={(element) => { headerRefs.current[index] = element }}
               type="button"
-              className="dsh-workbench-explorer-section-toggle"
+              className="dsh-workspace-explorer-section-toggle"
               aria-expanded={open}
               aria-controls={contentId}
               onClick={() => togglePane(pane)}
@@ -312,7 +312,7 @@ export function ExplorerPaneStack<TContext>({ registry, context, initialLayout, 
             {open && <ExplorerScrollPane id={contentId}>{pane.render(context)}</ExplorerScrollPane>}
             {index < panes.length - 1 && (
               <Sash
-                className="dsh-workbench-explorer-pane-sash"
+                className="dsh-workspace-explorer-pane-sash"
                 orientation="horizontal"
                 label={resizeLabel(pane.title(context), panes[index + 1]?.title(context))}
                 value={panes.slice(0, index + 1).reduce((total, candidate) => total + (

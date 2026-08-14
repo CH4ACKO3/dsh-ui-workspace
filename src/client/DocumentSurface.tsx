@@ -54,7 +54,7 @@ export function DocumentSurface({
   }
 }) {
   const { surface, sessionId } = useUiSurface()
-  const workbenchVersion = useSyncExternalStore(
+  const workspaceVersion = useSyncExternalStore(
     surface.subscribe,
     surface.getSnapshot,
     surface.getSnapshot,
@@ -82,7 +82,7 @@ export function DocumentSurface({
       active = false
       controller.abort()
     }
-  }, [reference, refresh, sessionId, surface, workbenchVersion])
+  }, [reference, refresh, sessionId, surface, workspaceVersion])
 
   useEffect(() => {
     try {
@@ -92,14 +92,14 @@ export function DocumentSurface({
     } catch {
       return
     }
-  }, [reference, sessionId, surface, workbenchVersion])
+  }, [reference, sessionId, surface, workspaceVersion])
 
   if (load.status === 'loading') {
-    return <div className="dsh-workbench-document-state" role="status">{labels.loading}</div>
+    return <div className="dsh-workspace-document-state" role="status">{labels.loading}</div>
   }
   if (load.status === 'error') {
     return (
-      <div className="dsh-workbench-document-state" role="alert">
+      <div className="dsh-workspace-document-state" role="alert">
         <strong>{labels.unavailable}</strong>
         <span>{load.message}</span>
       </div>
@@ -172,18 +172,18 @@ function ReadyDocumentSurface({
     document: part,
     openDocument,
     renderPart,
-  }, <div className="dsh-workbench-document-state">{labels.unsupported}</div>)
+  }, <div className="dsh-workspace-document-state">{labels.unsupported}</div>)
 
   return (
-    <article className="dsh-workbench-detail">
-      <header className="dsh-workbench-detail-header">
-        <div className="dsh-workbench-detail-title-row">
-          <div className="dsh-workbench-detail-heading">
-            <h3 className="dsh-workbench-detail-title">{document.title ?? document.uri}</h3>
+    <article className="dsh-workspace-detail">
+      <header className="dsh-workspace-detail-header">
+        <div className="dsh-workspace-detail-title-row">
+          <div className="dsh-workspace-detail-heading">
+            <h3 className="dsh-workspace-detail-title">{document.title ?? document.uri}</h3>
             {document.kind && <Pill>{document.kind}</Pill>}
           </div>
           {availableActions.length > 0 && (
-            <div className="dsh-workbench-detail-actions">
+            <div className="dsh-workspace-detail-actions">
               {availableActions.map((action) => (
                 <Button
                   key={action.id}
@@ -205,7 +205,7 @@ function ReadyDocumentSurface({
           )}
         </div>
       </header>
-      <div className="dsh-workbench-detail-body">
+      <div className="dsh-workspace-detail-body">
         {renderPart(document)}
         {activeAction?.renderPanel?.({
           ...actionContext,

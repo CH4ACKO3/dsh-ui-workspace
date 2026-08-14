@@ -33,7 +33,7 @@ test('provides accessible tree, tab, and sash interactions', async () => {
   assert.match(tree, /role="treeitem"/)
   assert.match(tree, /event\.key === 'ArrowRight'/)
   assert.match(tree, /typeahead/)
-  assert.match(tree, /dsh-workbench-tree-sticky-scroll/)
+  assert.match(tree, /dsh-workspace-tree-sticky-scroll/)
   assert.match(tree, /addEventListener\('scroll'/)
   assert.match(tabs, /data-preview/)
   assert.match(tabs, /scrollIntoView/)

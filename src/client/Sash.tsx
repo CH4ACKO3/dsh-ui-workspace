@@ -17,7 +17,7 @@ export type SashProps = {
   onReset?: () => void
 }
 
-/** Pointer- and keyboard-accessible separator shared by Workbench layouts. */
+/** Pointer- and keyboard-accessible separator shared by Workspace layouts. */
 export function Sash({
   orientation,
   label,
