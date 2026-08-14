@@ -62,7 +62,7 @@
   "devDependencies": {
     "@deepseek-ai/dsh-client-runtime": "0.1.0-rc.6",
     "@deepseek-ai/dsh-client-ui-primitives": "0.1.0-rc.6",
-    "@ch4acko3/dsh-ui-container": "github:CH4ACKO3/dsh-ui-container#ecc162fdd7cf97fa949be8697a4fc49f66961fb6",
+    "@ch4acko3/dsh-ui-container": "github:CH4ACKO3/dsh-ui-container#9af17d712dfdd38a0ac52123fafb79c73d23daf0",
     "@types/react": "~18.3.1",
     "react": "^18.2.0",
     "tsdown": "0.22.14",
