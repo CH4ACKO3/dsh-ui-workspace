@@ -57,7 +57,7 @@ test('ships an independently installable DSH client bundle over Container', asyn
   assert.equal(packageJson.exports['./client'].default, './lib/client.js')
   assert.equal(packageJson.peerDependencies['@ch4acko3/dsh-ui-container'], '^0.1.0')
   assert.equal(packageJson.peerDependenciesMeta['@ch4acko3/dsh-ui-container'].optional, true)
-  assert.match(patch, /id: ch4acko3-ui-container/)
+  assert.doesNotMatch(patch, /id: ch4acko3-ui-container/)
   assert.match(patch, /id: ch4acko3-ui-workspace/)
   assert.match(host, /export function apply\(\): void/)
   assert.match(client, /inject = \['uiContainer'\]/)
