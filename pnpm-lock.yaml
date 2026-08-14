@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@memorax-agent/dsh-ui-container':
-        specifier: github:CH4ACKO3/dsh-ui-container#4c97325e7388922e5ec2d5eb051e3e63f6696c59
-        version: https://codeload.github.com/CH4ACKO3/dsh-ui-container/tar.gz/4c97325e7388922e5ec2d5eb051e3e63f6696c59(@deepseek-ai/cordis@4.0.1)(@deepseek-ai/dsh-client-runtime@0.1.0-rc.6(5ee287bd07c00b3171c7ee342e9431a4))(react@18.3.1)
+        specifier: github:CH4ACKO3/dsh-ui-container#19bf0fd5376d7f76ace7a56cced34b95ae73ae9f
+        version: https://codeload.github.com/CH4ACKO3/dsh-ui-container/tar.gz/19bf0fd5376d7f76ace7a56cced34b95ae73ae9f(@deepseek-ai/cordis@4.0.1)(@deepseek-ai/dsh-client-runtime@0.1.0-rc.6(5ee287bd07c00b3171c7ee342e9431a4))(react@18.3.1)
     devDependencies:
       '@deepseek-ai/dsh-client-ui-primitives':
         specifier: 0.1.0-rc.6
@@ -509,8 +509,8 @@ packages:
   '@deepseek-ai/schemastery@3.18.1':
     resolution: {integrity: sha512-Qn0FCSwCQnpnj6SB31I6i2sIKgKWnkbJM8O0EU91Gv2UsYVvtZTl6IA0sCwk2e2MZf5S8w5hpq9QkeVvK9qwxg==}
 
-  '@memorax-agent/dsh-ui-container@https://codeload.github.com/CH4ACKO3/dsh-ui-container/tar.gz/4c97325e7388922e5ec2d5eb051e3e63f6696c59':
-    resolution: {gitHosted: true, integrity: sha512-zXcomZV6PlHY+diBKLyUHzTqhM8m2RLIc/OUK97AkO7xwjMY4Td4oFENtxAvDgeqCwAmcSdajREwx1cE9HENyg==, tarball: https://codeload.github.com/CH4ACKO3/dsh-ui-container/tar.gz/4c97325e7388922e5ec2d5eb051e3e63f6696c59}
+  '@memorax-agent/dsh-ui-container@https://codeload.github.com/CH4ACKO3/dsh-ui-container/tar.gz/19bf0fd5376d7f76ace7a56cced34b95ae73ae9f':
+    resolution: {gitHosted: true, integrity: sha512-fJZiO0Q0ZZqYiytuvXmaqhAsLxHsgydIh2J/B2lXKGMGJDJcvfpN97CMvxru1H4+KdDiVk0q2vOqcRMB+PBZNw==, tarball: https://codeload.github.com/CH4ACKO3/dsh-ui-container/tar.gz/19bf0fd5376d7f76ace7a56cced34b95ae73ae9f}
     version: 0.1.0
     engines: {node: ^22.19.0 || >=24.0.0}
     peerDependencies:
@@ -1479,7 +1479,7 @@ snapshots:
       '@deepseek-ai/cosmokit': 1.8.2
       '@standard-schema/spec': 1.1.0
 
-  '@memorax-agent/dsh-ui-container@https://codeload.github.com/CH4ACKO3/dsh-ui-container/tar.gz/4c97325e7388922e5ec2d5eb051e3e63f6696c59(@deepseek-ai/cordis@4.0.1)(@deepseek-ai/dsh-client-runtime@0.1.0-rc.6(5ee287bd07c00b3171c7ee342e9431a4))(react@18.3.1)':
+  '@memorax-agent/dsh-ui-container@https://codeload.github.com/CH4ACKO3/dsh-ui-container/tar.gz/19bf0fd5376d7f76ace7a56cced34b95ae73ae9f(@deepseek-ai/cordis@4.0.1)(@deepseek-ai/dsh-client-runtime@0.1.0-rc.6(5ee287bd07c00b3171c7ee342e9431a4))(react@18.3.1)':
     dependencies:
       '@deepseek-ai/cordis': 4.0.1(@deepseek-ai/cordis-plugin-include@1.0.6)(@deepseek-ai/cordis-plugin-loader@1.0.2)
       '@deepseek-ai/dsh-client-runtime': 0.1.0-rc.6(5ee287bd07c00b3171c7ee342e9431a4)

@@ -1,0 +1,42 @@
+import assert from 'node:assert/strict'
+import { readFile } from 'node:fs/promises'
+import test from 'node:test'
+
+const sourceRoot = '../src/client/'
+
+test('keeps editor tabs independent from document providers', async () => {
+  const tabs = await readFile(new URL(`${sourceRoot}TabbedEditor.tsx`, import.meta.url), 'utf8')
+
+  assert.match(tabs, /document: DocumentRef/)
+  assert.match(tabs, /renderDocument: \(document: DocumentRef\)/)
+  assert.doesNotMatch(tabs, /preview-data|PreviewDocument|DocumentDetail/)
+})
+
+test('publishes reusable panes and document actions', async () => {
+  const panes = await readFile(new URL(`${sourceRoot}ExplorerPaneStack.tsx`, import.meta.url), 'utf8')
+  const actions = await readFile(new URL(`${sourceRoot}DocumentActions.tsx`, import.meta.url), 'utf8')
+  const entry = await readFile(new URL(`${sourceRoot}index.ts`, import.meta.url), 'utf8')
+
+  assert.match(panes, /class ExplorerPaneRegistry/)
+  assert.match(panes, /minimumBodyHeight\?: number/)
+  assert.match(actions, /class DocumentActionRegistry/)
+  assert.match(entry, /DocumentSurface/)
+  assert.match(entry, /ExplorerPaneStack/)
+  assert.doesNotMatch(entry, /conversation\.view|ctx\.provide/)
+})
+
+test('provides accessible tree, tab, and sash interactions', async () => {
+  const tree = await readFile(new URL(`${sourceRoot}TreeView.tsx`, import.meta.url), 'utf8')
+  const tabs = await readFile(new URL(`${sourceRoot}TabbedEditor.tsx`, import.meta.url), 'utf8')
+  const sash = await readFile(new URL(`${sourceRoot}Sash.tsx`, import.meta.url), 'utf8')
+
+  assert.match(tree, /role="treeitem"/)
+  assert.match(tree, /event\.key === 'ArrowRight'/)
+  assert.match(tree, /typeahead/)
+  assert.match(tree, /dsh-workbench-tree-sticky-scroll/)
+  assert.match(tree, /addEventListener\('scroll'/)
+  assert.match(tabs, /data-preview/)
+  assert.match(tabs, /scrollIntoView/)
+  assert.match(sash, /setPointerCapture/)
+  assert.match(sash, /role="separator"/)
+})

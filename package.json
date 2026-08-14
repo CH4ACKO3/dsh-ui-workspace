@@ -18,7 +18,8 @@
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "typecheck": "tsc -p tsconfig.json --noEmit",
-    "check": "pnpm run typecheck && pnpm run build",
+    "test": "pnpm run build && node --test test/*.test.mjs",
+    "check": "pnpm run typecheck && pnpm run test",
     "prepare": "pnpm run build"
   },
   "engines": {
@@ -26,7 +27,7 @@
   },
   "packageManager": "pnpm@11.19.0",
   "dependencies": {
-    "@memorax-agent/dsh-ui-container": "github:CH4ACKO3/dsh-ui-container#4c97325e7388922e5ec2d5eb051e3e63f6696c59"
+    "@memorax-agent/dsh-ui-container": "github:CH4ACKO3/dsh-ui-container#19bf0fd5376d7f76ace7a56cced34b95ae73ae9f"
   },
   "peerDependencies": {
     "@deepseek-ai/dsh-client-ui-primitives": "0.1.0-rc.6",
