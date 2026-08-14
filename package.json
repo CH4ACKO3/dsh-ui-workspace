@@ -1,7 +1,7 @@
 {
-  "name": "@ch4acko3/dsh-ui-workbench",
+  "name": "@ch4acko3/dsh-ui-workspace",
   "version": "0.1.0",
-  "description": "Composable workbench primitives for DeepSeek Harness UI plugins",
+  "description": "Composable workspace primitives for DeepSeek Harness UI plugins",
   "type": "module",
   "exports": {
     "./client": {
@@ -44,12 +44,12 @@
     "dsh-plugin",
     "cordis",
     "ui",
-    "workbench"
+    "workspace"
   ],
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/CH4ACKO3/dsh-ui-workbench.git"
+    "url": "git+https://github.com/CH4ACKO3/dsh-ui-workspace.git"
   },
   "publishConfig": {
     "access": "public"
